@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bilty.niveshsahayak.in/sitemap.xml
