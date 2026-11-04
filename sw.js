@@ -1,5 +1,5 @@
-const CACHE = 'ns-bilty-c2355c3ad7';
-const SHELL = ["/", "/assets/base.css?v=761f06359b", "/assets/doc.css?v=24f03d0c6b", "/assets/i18n.js?v=99cb868964", "/assets/store.js?v=eb98e624a1", "/assets/core.js?v=b989e14141", "/assets/kit.js?v=b1cc081e14", "/assets/bilty.js?v=e66d84544c", "/assets/kit.css?v=69b6584abf"];
+const CACHE = 'ns-bilty-3abb1503f1';
+const SHELL = ["/", "/assets/base.css?v=761f06359b", "/assets/doc.css?v=1271e229c4", "/assets/i18n.js?v=5e65e9b51a", "/assets/store.js?v=eb98e624a1", "/assets/core.js?v=b989e14141", "/assets/kit.js?v=b1cc081e14", "/assets/bilty.js?v=e66d84544c", "/assets/kit.css?v=22e2f97260"];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(n => n.startsWith('ns-') && n !== CACHE).map(n => caches.delete(n)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {
