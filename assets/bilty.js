@@ -55,6 +55,7 @@
           K.f('payer', t('lr.payer'), { type: 'select', opts: [['cnor', t('lr.cnor')], ['cnee', t('lr.cnee')]] }) + K.f('adv', t('lr.adv'), { mode: 'decimal', ltr: 1, show: '!fstat=paid' }) +
           K.f('gstMode', t('lr.gst'), { type: 'select', wide: true, opts: [['rcm', t('lr.grcm')], ['f5', t('lr.gf5')], ['f18', t('lr.gf18')], ['ex', t('lr.gex')]], hint: t('lr.gsth') }) +
           '<div class="sums wide" id="ed-sums" aria-live="polite"></div></div>') +
+        '<div class="row wide pos-go gr-go"><button type="button" class="btn" data-tp="open">' + esc(t('tp.open')) + '</button></div>' +
         K.bizCard({ lg: t('lr.gta') }) + K.lookCard();
     },
     rows: {
@@ -65,6 +66,7 @@
       }
     },
     wire: function (ed, K) {
+      if (window.NSTripUI) NSTripUI.init(K);   /* Trips and fleet desk (engine/trips.js) */
       var n = $('[data-b="cnee.name"]', ed);
       if (n) NS.suggest(n, function () { return NSStore.list('party'); }, function (x) { return x.name; }, function (p) { var d = K.doc(); d.cnee = { name: p.name, addr: p.addr || '', state: p.state || '', gstin: p.gstin || '', phone: p.phone || '' }; K.refill(); });
     },
