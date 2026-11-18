@@ -1,6 +1,6 @@
 /* bilty.niveshsahayak.in: a transporter's lorry receipt (LR, bilty, consignment note) and freight bill.
    Record type 'lr'. The consignor is kept in `buyer`, the consignee in `cnee`; the party who pays the freight is the
-   customer in the Nivesh Sahayak App. GST on goods transport agency (GTA) service: reverse charge 5% paid by the
+   customer in NSBiz. GST on goods transport agency (GTA) service: reverse charge 5% paid by the
    recipient (the usual case), or forward charge 5% without input tax credit, or 18% with credit (12% before 22 Sep 2025). */
 (function () {
   'use strict';

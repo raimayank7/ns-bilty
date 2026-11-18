@@ -1,7 +1,7 @@
 /* trips.js: the "Trips and fleet" desk of bilty.niveshsahayak.in (India plan C). Opens from a button under the lorry receipt form.
    Vehicles, drivers, trips, costs outside trips, per-vehicle / per-driver profit statements for a period, freight dues by party, vehicle and
    licence due dates. Records are 'doc' records of type tveh / tdrv / ttrip / tvexp (logic and field list: engine/tripcore.js). They never
-   reach the Nivesh Sahayak App's accounts by themselves: the freight earned reaches the App through the lorry receipt (type 'lr') as before;
+   reach NSBiz's accounts by themselves: the freight earned reaches the App through the lorry receipt (type 'lr') as before;
    the party dues here add the lorry receipts' balance from the App's books. No server; reminders are WhatsApp texts the owner sends. */
 (function () {
   'use strict';
