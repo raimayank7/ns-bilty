@@ -35,7 +35,7 @@
   /* ---------- printing a statement: a copy in the page that only prints ---------- */
   function printHtml(title, html) {
     var old = $('#tp-print'); if (old) old.remove();
-    var s = who(), box = NS.el('div', { id: 'tp-print' }, '<h2>' + esc(s || 'Trips') + '</h2><h3>' + esc(title) + '</h3>' + html + '<p class="small">Made free at bilty.niveshsahayak.in</p>');
+    var s = who(), box = NS.el('div', { id: 'tp-print' }, '<h2>' + esc(s || 'Trips') + '</h2><h3>' + esc(title) + '</h3>' + html + '' + NS.creditLine('small') + '');
     document.body.appendChild(box); document.documentElement.classList.add('tp-on');
     var done = function () { document.documentElement.classList.remove('tp-on'); box.remove(); window.removeEventListener('afterprint', done); };
     window.addEventListener('afterprint', done); setTimeout(function () { window.print(); }, 50);
