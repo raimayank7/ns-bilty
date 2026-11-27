@@ -28,7 +28,7 @@
   function who(d) { return d.payer === 'cnee' ? d.cnee : d.buyer; }
 
   NS.kit({
-    type: 'lr', prefix: 'LR', digits: 4, paper: 'a5', papers: ['a5', 'a4'], copies: 4, copyLabels: COPIES,
+    type: 'lr', prefix: 'LR', digits: 4, paper: 'a5', papers: NS.PAPER_ALL, copies: 4, copyLabels: COPIES,
     name: function (d) { return d.print === 'bill' ? 'Freight Bill' : 'Lorry Receipt'; },
     blank: function () {
       return { print: 'lr', from: '', to: '', veh: '', driver: '', dphone: '', invNo: '', invVal: '', ewb: '', risk: 'owner', basis: 'fixed', frate: '', adv: '',
